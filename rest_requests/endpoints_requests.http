@@ -1,0 +1,253 @@
+############ Commit 2 - Spring Boot Hello World ############  
+GET http://localhost:8080/
+
+############ Commit 6 - Course controller ############
+
+GET http://localhost:8080/courses
+
+### =========== create some courses ===========
+
+POST http://localhost:8080/courses
+Content-Type: application/json
+
+{
+    "name": "Databases",
+    "description": "Reference: Henry Korth et al., Elmasri Navathe et al."
+}
+ 
+### create few more courses
+POST http://localhost:8080/courses
+Content-Type: application/json
+
+{
+    "name": "Computer Networks",
+    "description": "References: Tanenbaum, Forouzan"
+}
+
+###
+
+POST http://localhost:8080/courses
+Content-Type: application/json
+
+{
+    "name": "Operating Systems",
+    "description": "References: Galvin et al., Tanenbaum, Stallings"
+}
+
+###
+
+POST http://localhost:8080/courses
+Content-Type: application/json
+
+{
+    "name": "Computer Architecture",
+    "description": "References: Hennessy and Patterson, Stallings"
+}
+
+###
+
+POST http://localhost:8080/courses
+Content-Type: application/json
+
+{
+    "name": "Software Engineering",
+    "description": "References: Pressman, Sommerville"
+}
+
+###
+
+POST http://localhost:8080/courses
+Content-Type: application/json
+
+{
+    "name": "Algorithms",
+    "description": "References: Cormen et al., Kleinberg and Tardos"
+}
+
+###
+
+POST http://localhost:8080/courses
+Content-Type: application/json
+
+{
+    "name": "Compiler Design",
+    "description": "References: Aho et al., Ullman et al."
+}
+
+###
+
+POST http://localhost:8080/courses
+Content-Type: application/json
+
+{
+    "name": "Automata Theory",
+    "description": "References: Peter Linz, John Hopcroft et al."
+}
+
+### =========== get all courses =========== 
+GET http://localhost:8080/courses
+
+
+### =========== update a course ===========
+
+PUT http://localhost:8080/courses/1
+Content-Type: application/json
+
+{
+    "name": "Databases",
+    "description": "Reference: Henry Korth et al., Elmasri Navathe et al., Raghu Ramakrishnan et al."
+}
+
+### =========== get specific course by ID ===========
+
+GET http://localhost:8080/courses/1
+
+### =========== delete a course ===========
+DELETE http://localhost:8080/courses/2
+
+### =========== get all courses =========== 
+GET http://localhost:8080/courses/2
+
+############ Commit 7 - Adding student model, controller and repository ############ 
+
+GET http://localhost:8080/students
+
+### =========== create some students ===========
+
+POST http://localhost:8080/students
+Content-Type: application/json
+
+{
+    "firstName": "Rahul",
+    "lastName": "Sharma",
+    "dateOfBirth": "1995-05-15T00:00:00Z",
+    "enrollmentDate": "2022-09-01T00:00:00Z",
+    "address": "Delhi, India",
+    "phoneNumber": "+91 9876543210",
+    "username": "rahulsharma"
+}
+
+###
+
+POST http://localhost:8080/students
+Content-Type: application/json
+
+{
+    "firstName": "Priya",
+    "lastName": "Patel",
+    "dateOfBirth": "1998-08-25T00:00:00Z",
+    "enrollmentDate": "2022-09-01T00:00:00Z",
+    "address": "Mumbai, India",
+    "phoneNumber": "+91 9876543211",
+    "username": "priyapatel"
+}
+
+###
+
+POST http://localhost:8080/students
+Content-Type: application/json
+
+{
+    "firstName": "Amit",
+    "lastName": "Verma",
+    "dateOfBirth": "1997-03-10T00:00:00Z",
+    "enrollmentDate": "2022-09-01T00:00:00Z",
+    "address": "Bangalore, India",
+    "phoneNumber": "+91 9876543212",
+    "username": "amitverma"
+}
+
+###
+
+POST http://localhost:8080/students
+Content-Type: application/json
+
+{
+    "firstName": "Sneha",
+    "lastName": "Gupta",
+    "dateOfBirth": "1996-11-05T00:00:00Z",
+    "enrollmentDate": "2022-09-01T00:00:00Z",
+    "address": "Kolkata, India",
+    "phoneNumber": "+91 9876543213",
+    "username": "snehagupta"
+}
+
+###
+
+POST http://localhost:8080/students
+Content-Type: application/json
+
+{
+    "firstName": "Rajesh",
+    "lastName": "Kumar",
+    "dateOfBirth": "1999-02-18T00:00:00Z",
+    "enrollmentDate": "2022-09-01T00:00:00Z",
+    "address": "Chennai, India",
+    "phoneNumber": "+91 9876543214",
+    "username": "rajeshkumar"
+}
+
+###
+
+POST http://localhost:8080/students
+Content-Type: application/json
+
+{
+    "firstName": "Neha",
+    "lastName": "Singh",
+    "dateOfBirth": "1994-07-30T00:00:00Z",
+    "enrollmentDate": "2022-09-01T00:00:00Z",
+    "address": "Hyderabad, India",
+    "phoneNumber": "+91 9876543215",
+    "username": "nehasingh"
+}
+
+###
+
+POST http://localhost:8080/students
+Content-Type: application/json
+
+{
+    "firstName": "Vikram",
+    "lastName": "Sharma",
+    "dateOfBirth": "1993-12-12T00:00:00Z",
+    "enrollmentDate": "2022-09-01T00:00:00Z",
+    "address": "Jaipur, India",
+    "phoneNumber": "+91 9876543216",
+    "username": "vikramsharma"
+}
+
+### =========== get all students =========== 
+GET http://localhost:8080/students
+
+### =========== get specific student by ID ===========
+
+GET http://localhost:8080/students/3
+
+### =========== update a student ===========
+PUT http://localhost:8080/students/1
+Content-Type: application/json
+
+{
+  "id": 1,
+  "firstName": "Rahul",
+  "lastName": "Sharma",
+  "dateOfBirth": "1995-05-15T00:00:00.000+00:00",
+  "enrollmentDate": "2022-09-01T00:00:00.000+00:00",
+  "address": "Delhi, India",
+  "phoneNumber": "+91 9876543222",
+  "username": "rahulsharma",
+  "courses": []
+}
+
+### =========== delete a student ===========
+DELETE http://localhost:8080/student/2
+
+### =========== get specific student by ID ===========
+
+GET http://localhost:8080/students/2
+
+############ Commit 9 - Service to enroll student into a course  ############
+
+POST http://localhost:8080/enrollments?studentId=3&courseId=4
+
