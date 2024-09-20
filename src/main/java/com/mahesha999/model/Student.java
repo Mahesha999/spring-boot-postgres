@@ -1,8 +1,11 @@
 package com.mahesha999.model;
 
 import java.util.Date;
+import java.util.HashSet;
 
 import jakarta.persistence.*;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 @Table(name = "students")
@@ -31,6 +34,14 @@ public class Student {
 
     @Column(name = "username")
     private String username;
+
+    @ManyToMany
+    @JoinTable(
+        name = "enrolments",
+        joinColumns = @JoinColumn(name = "student_id"),
+        inverseJoinColumns = @JoinColumn(name = "course_id")
+    )
+    private Set<Course> courses = new HashSet<>();
 
     public Student() {
     }   
@@ -109,5 +120,13 @@ public class Student {
 
     public void setUsername(String username) {
         this.username = username;
+    }
+
+    public Set<Course> getCourses() {
+        return courses;
+    }
+
+    public void setCourses(Set<Course> courses) {
+        this.courses = courses;
     }
 }
