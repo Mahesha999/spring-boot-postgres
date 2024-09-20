@@ -248,6 +248,5 @@ DELETE http://localhost:8080/student/2
 GET http://localhost:8080/students/2
 
 ############ Commit 9 - Service to enroll student into a course  ############
-
-POST http://localhost:8080/enrollments?studentId=3&courseId=4
+POST http://localhost:8080/enrollments?studentId=6&courseId=6
 
